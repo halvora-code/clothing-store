@@ -21,8 +21,12 @@
                 <div id="cart-items"></div>
                 <p>Subtotal: $<span id="cart-total">0.00</span></p>
 
+                <button id="checkout-button">Checkout</button>
+
                 <button id="close-cart">Continue Shopping</button>
             </section>
+
+    
         </header>
         <main>
             <section class="products">
@@ -165,6 +169,22 @@
                         <p class="price">$12.00</p>
                         <button class="buy-button" data-name="Black Skirt" data-price="12.00">Add to cart</button>
                     </div>
+                </div>
+            </section>
+            <!--Checkout Panel below-->
+            <section id="checkout-panel" hidden>
+                <div class="receipt">
+                    <h2>Clothing Store</h2>
+                    <p>Purchase Receipt</p>
+
+                    <hr>
+                    <div id="checkout-items"></div>
+                    <hr>
+                    <p>Subtotal: $<span id="checkout-subtotal">0.00</span></p>
+                    <p>Tax: $1.00</p>
+                    <h3>Total: $<span id="checkout-total">0.00</span></h3>
+                    <button id="payment-button">Make Payment</button>
+                    <p id="payment-status"></p>
                 </div>
             </section>
         </main>

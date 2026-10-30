@@ -8,6 +8,15 @@ const cartItems = document.querySelector("#cart-items");
 const cartTotal = document.querySelector("#cart-total");
 const closeCart = document.querySelector("#close-cart");
 const buyButtons = document.querySelectorAll(".buy-button");
+const checkoutButton = document.querySelector("#checkout-button");
+const checkoutPanel = document.querySelector("#checkout-panel");
+const checkoutItems = document.querySelector("#checkout-items");
+const checkoutSubtotal = document.querySelector("#checkout-subtotal");
+const checkoutTotal = document.querySelector("#checkout-total");
+
+const productSelection = document.querySelector(".products");
+const paymentButton = document.querySelector("#payment-button");
+const paymentStatus = document.querySelector("#payment-status");
 
 
 buyButtons.forEach(function(button){
@@ -58,4 +67,34 @@ closeCart.addEventListener("click", function() {
     cartPanel.hidden = true;
 });
 
+checkoutButton.addEventListener("click", function() {
+    checkoutItems.innerHTML = "";
 
+    let subtotal = 0;
+
+    cart.forEach(function(item) {
+        const product = document.createElement("p");
+
+        product.textContent =
+        item.name +" - $" + item.price.toFixed(2);
+
+        checkoutItems.appendChild(product);
+
+        subtotal += item.price;
+    });
+
+    const tax = 1.00;
+    const total = subtotal +tax;
+
+    checkoutSubtotal.textContent = subtotal.toFixed(2);
+    checkoutTotal.textContent = total.toFixed(2);
+
+    cartPanel.hidden = true;
+    productSelection.hidden =  true;
+    checkoutPanel.hiden = false;
+});
+
+paymentButton.addEventListener("click", function() {
+    paymentButton.textContent = "Processing...";
+    paymentStatus.textContent = "Please wait while we process your order!"
+});
