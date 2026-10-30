@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Clothing Store</title>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to the clothing store!</h1>
+            <h3>Browse around for some clothes and then purchase them at checkout</h3>
+
+            <button id="cart-toggle">
+                Cart (<span id="cart-count">0</span>)
+            </button>
+
+            <section id="cart-panel" hidden>
+                <h2>Shopping Cart</h2>
+
+                <div id="cart-items"></div>
+                <p>Subtotal: $<span id="cart-total">0.00</span></p>
+
+                <button id="close-cart">Continue Shopping</button>
+            </section>
+        </header>
+        <main>
+            <section class="products">
+                <h2>Our Collection</h2>
+                <!--Where all the clothes are stored-->
+                <div class="product-container">
+                    <div class="product-card">
+                        <img src="images/t-shirt1.png" alt="Cat t-shirt">
+                        <h3>White Cat Tee</h3>
+                        <p class="price">$9.00</p>
+                        <button class="buy-button" data-name="White Cat Tee" data-price="9.00">
+                            Add to cart</button>
+                    </div>
+                    <!--second pair of clothes-->
+                        <div class="product-card">
+                            <img src="images/jacket3.png" alt="Gray cat hoodie">
+                            <h3>Gray Cat hoodie</h3>
+                            <p class="price">$18.00</p>
+                            <button class="buy-button" data-name="Gray Cat Hoodie" data-price="18.00">
+                                Add to cart</button>
+                        </div>
+                    <!--Third pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/sweater1.png" alt="stripped sweater">
+                        <h3>Stripped Sweater</h3>
+                        <p class="price">$20.00</p>
+                        <button class="buy-button" data-name="Stripped Sweater" data-price="20.00">
+                            Add to cart</button>
+                    </div>
+                    <!--Fourth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/skirt1.png" alt="Brown skirt">
+                        <h3>Brown Skirt</h3>
+                        <p class="price">$15.00</p>
+                        <button class="buy-button" data-name="Brown Skirt" data-price="15.00">Add to cart</button>
+                    </div>
+                    <!--Fifth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/t-shirt2.png" alt="Green shirt">
+                        <h3>Green Shirt</h3>
+                        <p class="price">$10.00</p>
+                        <button class="buy-button" data-name="Green Shirt" data-price="10.00">Add to cart</button>
+                    </div>
+                    <!--Sixth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/sweater4.png" alt="Pink sweater">
+                        <h3>Pink Sweater</h3>
+                        <p class="price">$25.00</p>
+                        <button class="buy-button" data-name="Pink Sweater" data-price="25.00">Add to cart</button>
+                    </div>
+                    <!--Seventh pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/sleeve.png" alt="Black long sleeve">
+                        <h3>Black Top</h3>
+                        <p class="price">$12.00</p>
+                        <button class="buy-button" data-name="Black Top" data-price="12.00">
+                            Add to cart</button>
+                    </div>
+                    <!--Eigth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/pants2.png" alt="Cargo pants">
+                        <h3>Cargo Pants</h3>
+                        <p class="price">$30.00</p>
+                        <button class="buy-button" data-name="Cargo Pants" data-price="30.00">Add to cart</button>
+                    </div>
+                    <!--Ninth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/pjamas1.png" alt="Polka dot pj's">
+                        <h3>Polka Dot Pjamas</h3>
+                        <p class="price">$19.00</p>
+                        <button class="buy-button" data-name="Polka Dot pjamas" data-price="19.00">Add to cart</button>
+                    </div>
+                    <!--Tenth pair of clothes'-->
+                    <div class="product-card">
+                        <img src="images/skirt4.png" alt="Blue Plaid Skirt">
+                        <h3>Blue Plaid Skirt</h3>
+                        <p class="price">$18.00</p>
+                        <button class="buy-button" data-name="Blue Plaid Skirt" data-price="18.00">Add to cart</button>
+                    </div>
+                    <!--eleventh pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/cami.png" alt="cami top">
+                        <h3>Cherry Cami</h3>
+                        <p class="price">$6.00</p>
+                        <button class="buy-button" data-name="Blue Plaid Skirt" data-price="6.00">Add to cart</button>
+                    </div>
+                    <!--Twelveth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/dress.png" alt="black dress">
+                        <h3>Black Dress</h3>
+                        <p class="price">$40.00</p>
+                        <button class="buy-button" data-name="Black Dress" data-price="40.00">Add to cart</button>
+                    </div>
+                    <!--Thirteenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/sweater3.png" alt="Baby blue sweater">
+                        <h3>Blue Sweater</h3>
+                        <p class="price">$21.00</p>
+                        <button class="buy-button" data-name="Black Dress" data-price="21.00">Add to cart</button>
+                    </div>
+                    <!--Fourteenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/skirt3.png" alt="long black skirt">
+                        <h3>Long Black Skirt</h3>
+                        <p class="price">$18.00</p>
+                        <button class="buy-button" data-name="Black skirt" data-price="18.00">Add to cart</button>
+                    </div>
+                    <!--fifteenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/shirt4.png" alt="star shirt">
+                        <h3>Star Shirt</h3>
+                        <p class="price">$10.00</p>
+                        <button class="buy-button" data-name="Star shirt" data-price="10.00">Add to cart</button>
+                    </div>
+                    <!--Sixteenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/pjamas2.png" alt="Purple Pjamas">
+                        <h3>Purple Pjamas</h3>
+                        <p class="price">$23.00</p>
+                        <button class="buy-button" data-name="Purple Pjamas" data-price="23.00">Add to cart</button>
+                    </div>
+                    <!--Seventeenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/pants3.png" alt="Long black pants">
+                        <h3>Long black pants</h3>
+                        <p class="price">$23.00</p>
+                        <button class="buy-button" data-name="Long Black Pants" data-price="23.00">Add to cart</button>
+                    </div>
+                    <!--Eighteenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/sweater2.png" alt="Cat Sweater">
+                        <h3>Cat Sweater</h3>
+                        <p class="price">$22.00</p>
+                        <button class="buy-button" data-name="Cat Sweater" data-price="22.00">Add to cart</button>
+                    </div>
+                    <!--Nintenth pair of clothes-->
+                    <div class="product-card">
+                        <img src="images/skirt2.png" alt="Black Skirt">
+                        <h3>Black Skirt</h3>
+                        <p class="price">$12.00</p>
+                        <button class="buy-button" data-name="Black Skirt" data-price="12.00">Add to cart</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>Thanks for shopping!</footer>
+        <script src="script.js"></script>
+    </body>
+</html>
