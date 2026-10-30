@@ -17,6 +17,7 @@ const checkoutTotal = document.querySelector("#checkout-total");
 const productSelection = document.querySelector(".products");
 const paymentButton = document.querySelector("#payment-button");
 const paymentStatus = document.querySelector("#payment-status");
+const continueShopping = document.querySelector("#continue-shopping");
 
 
 buyButtons.forEach(function(button){
@@ -91,10 +92,33 @@ checkoutButton.addEventListener("click", function() {
 
     cartPanel.hidden = true;
     productSelection.hidden =  true;
-    checkoutPanel.hiden = false;
+    checkoutPanel.hidden = false;
 });
 
 paymentButton.addEventListener("click", function() {
     paymentButton.textContent = "Processing...";
+    paymentButton.disabled = true;
+
     paymentStatus.textContent = "Please wait while we process your order!"
+
+    setTimeout(function() {
+        paymentButton.textContent = "Purchase Complete!";
+        paymentStatus.textContent = "Payment Successful! Thank you for shopping!";
+        continueShopping.hidden = false;
+    }, 3000);
+
+});
+
+continueShopping.addEventListener("click", function(){
+    cart.length = 0;
+    updateCart();
+
+    checkoutPanel.hidden = true;
+    productSelection.hidden = false;
+
+    paymentButton.disabled = false;
+    paymentButton.textContent = "Make Payment";
+
+    paymentStatus.textContent = "";
+    continueShopping.hidden = true;
 });
